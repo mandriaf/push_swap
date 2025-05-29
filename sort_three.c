@@ -6,17 +6,12 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 12:49:11 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/05/29 09:38:30 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/05/29 11:01:15 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//1 2 3
-//2 1 3 => sa()
-//3 2 1 =>
-//1 3 2
-//3 1 2 =>ra()
-//2 3 1 => 3 2 1
+
 void	sort_three(t_stack **head)
 {
 	int	a;

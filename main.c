@@ -52,22 +52,23 @@ int	main(int argc, char **argv)
 	int i;
 	i = 1;
 	t_stack *stack_a = NULL;
-
-	argument_analysis(argc, argv);
+	t_stack	*stack_b = NULL;
+	stack_b = new_stack(15);
+	check_argument(argc, argv);
 	while (i < argc)
 	{
 		lstadd_back(&stack_a, new_stack(ft_atoi(argv[i])));
 		i++;
 	}
-	printf("argc == %d\n", argc);
-	if (argc == 4)
-		sort_three(&stack_a);
-	t_stack *aff = stack_a;
-	while (aff)
-	{
-		printf("%d -> ", aff->data);
-		aff = aff->next;
-	}
-	printf("NULL\n");
+	printf("Avant push:\n");
+	print_list(&stack_a);
+	print_list(&stack_b);
+	// if (argc == 4)
+	// 	sort_three(&stack_a);
+	push_a(&stack_a, &stack_b);
+	printf("Stack A:\n");
+	print_list(&stack_a);
+	printf("Stack B:\n");
+	print_list(&stack_b);
 	return (0);
 }

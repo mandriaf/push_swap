@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   argument.c                                         :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/28 13:08:50 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/05/29 11:10:37 by mandriaf         ###   ########.fr       */
+/*   Created: 2025/05/29 11:01:20 by mandriaf          #+#    #+#             */
+/*   Updated: 2025/05/29 11:19:33 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_argument(int argc, char **argv)
+void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
-	int	i;
-	int	j;
+	t_stack	*tmp;
 
-	i = 1;
-	if (!argv || argc < 2)
-		exit(-1);
-	while (i < argc)
-	{
-		j = 0;
-		if ((argv[i][0]) == '+' || argv[i][0] == '-')
-			j++;
-		while (argv[i][j])
-		{
-			if (argv[i][j] < '0' || argv[i][j] > '9')
-			{
-				write(2, "Error\n", 6);
-				exit(-1);
-			}
-			j++;
-		}
-		i++;
-	}
+	if (!stack_a)
+		return ;
+	tmp = *stack_a;
+	*stack_a = (*stack_a)->next;
+	tmp->next = *stack_b;
+	*stack_b = tmp;
+	write(1, "pa\n", 3);
+}
+
+void	push_b(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*tmp;
+
+	if (!stack_b)
+		return ;
+	tmp = *stack_b;
+	*stack_b = (*stack_b)->next;
+	tmp->next = *stack_a;
+	*stack_a = tmp;
+	write(1, "pb\n", 3);
 }

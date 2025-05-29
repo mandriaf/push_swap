@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   argument.c                                         :+:      :+:    :+:   */
+/*   list.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/28 13:08:50 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/05/29 11:10:37 by mandriaf         ###   ########.fr       */
+/*   Created: 2025/05/29 12:54:20 by mandriaf          #+#    #+#             */
+/*   Updated: 2025/05/29 13:33:51 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_argument(int argc, char **argv)
+void	print_list(t_stack **head)
 {
-	int	i;
-	int	j;
+	t_stack	*tmp;
 
-	i = 1;
-	if (!argv || argc < 2)
-		exit(-1);
-	while (i < argc)
+	if (!head)
+		return ;
+	tmp = *head;
+	while (tmp)
 	{
-		j = 0;
-		if ((argv[i][0]) == '+' || argv[i][0] == '-')
-			j++;
-		while (argv[i][j])
-		{
-			if (argv[i][j] < '0' || argv[i][j] > '9')
-			{
-				write(2, "Error\n", 6);
-				exit(-1);
-			}
-			j++;
-		}
-		i++;
+		printf("%d -> ", tmp->data);
+		tmp = tmp->next;
 	}
+	printf("NULL\n");
 }

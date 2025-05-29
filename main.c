@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 // static int	ft_strlen(const char *s)
 // {
 // 	int	i;
@@ -49,10 +48,13 @@ static t_stack	*new_stack(int data)
 
 int	main(int argc, char **argv)
 {
-	int i;
+	int		i;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
 	i = 1;
-	t_stack *stack_a = NULL;
-	t_stack	*stack_b = NULL;
+	stack_a = NULL;
+	stack_b = NULL;
 	stack_b = new_stack(15);
 	check_argument(argc, argv);
 	while (i < argc)
@@ -60,15 +62,11 @@ int	main(int argc, char **argv)
 		lstadd_back(&stack_a, new_stack(ft_atoi(argv[i])));
 		i++;
 	}
-	printf("Avant push:\n");
+	printf("Avant tri:\n");
 	print_list(&stack_a);
-	print_list(&stack_b);
-	// if (argc == 4)
-	// 	sort_three(&stack_a);
-	push_a(&stack_a, &stack_b);
+	if (argc == 4)
+		sort_three(&stack_a);
 	printf("Stack A:\n");
 	print_list(&stack_a);
-	printf("Stack B:\n");
-	print_list(&stack_b);
 	return (0);
 }

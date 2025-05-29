@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:08:50 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/05/28 13:43:57 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/05/29 08:35:45 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	argument_analysis(int argc, char **argv)
 	while (i < argc)
 	{
 		j = 0;
+		if ((argv[i][0]) == '+' || argv[i][0] == '-')
+			j++;
 		while (argv[i][j])
 		{
 			if (argv[i][j] < '0' || argv[i][j] > '9')

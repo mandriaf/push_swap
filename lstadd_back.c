@@ -6,15 +6,15 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 13:42:37 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/05/28 13:07:31 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/05/29 09:10:35 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	lstadd_back(t_list **lst, t_list *new)
+void	lstadd_back(t_stack **lst, t_stack *new)
 {
-	t_list	*tmp;
+	t_stack	*tmp;
 
 	if (!*lst)
 	{

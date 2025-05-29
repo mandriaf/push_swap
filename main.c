@@ -4,43 +4,42 @@
 #include <string.h>
 
 
-int				count_tri_list(t_list *lst, int (*cmp)(int, int));
-static int	ft_strlen(const char *s)
+// static int	ft_strlen(const char *s)
+// {
+// 	int	i;
+
+// 	if (!s)
+// 		return (0);
+// 	i = 0;
+// 	while (s[i])
+// 		i++;
+// 	return (i);
+// }
+
+// static int	ft_strcmp(const char *s1, const char *s2)
+// {
+// 	if (!s1 || !s2)
+// 		return (-1);
+// 	while (*s1 || *s2)
+// 	{
+// 		if (*s1 != *s2)
+// 			return (*s1 - *s2);
+// 		s1++;
+// 		s2++;
+// 	}
+// 	return (0);
+// }
+
+// static int	comparaison(int a, int b)
+// {
+// 	return (a <= b);
+// }
+
+static t_stack	*new_stack(int data)
 {
-	int	i;
+	t_stack	*new;
 
-	if (!s)
-		return (0);
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-static int	ft_strcmp(const char *s1, const char *s2)
-{
-	if (!s1 || !s2)
-		return (-1);
-	while (*s1 || *s2)
-	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
-	}
-	return (0);
-}
-
-static int	comparaison(int a, int b)
-{
-	return (a <= b);
-}
-
-static t_list	*lstnew(int data)
-{
-	t_list	*new;
-
-	new = malloc(sizeof(t_list));
+	new = malloc(sizeof(t_stack));
 	if (!new)
 		return (NULL);
 	new->data = data;
@@ -48,28 +47,22 @@ static t_list	*lstnew(int data)
 	return (new);
 }
 
-static void	ft_lstadd_front(t_list **head, t_list *new)
-{
-	if (!head || !new)
-		return ;
-	new->next = *head;
-	*head = new;
-}
-
 int	main(int argc, char **argv)
 {
 	int i;
 	i = 1;
-	t_list *stack_a = NULL;
+	t_stack *stack_a = NULL;
 
 	argument_analysis(argc, argv);
 	while (i < argc)
 	{
-		lstadd_back(&stack_a, lstnew(ft_atoi(argv[i])));
+		lstadd_back(&stack_a, new_stack(ft_atoi(argv[i])));
 		i++;
 	}
-	swap_a_and_b(&stack_a, &stack_a);
-	t_list *aff = stack_a;
+	printf("argc == %d\n", argc);
+	if (argc == 4)
+		sort_three(&stack_a);
+	t_stack *aff = stack_a;
 	while (aff)
 	{
 		printf("%d -> ", aff->data);

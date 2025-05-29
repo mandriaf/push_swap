@@ -6,64 +6,52 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 12:08:16 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/05/28 13:45:24 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/05/29 09:15:55 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-//./a.out a b c d
-// void	rotate_a(t_list **lst)
-// {
-// 	t_list	*tmp;
-// 	int		value;
-
-// 	if (!lst || !*lst || !(*lst)->next)
-// 		return ;
-// 	value = (*lst)->data;
-// 	tmp = *lst;
-// 	while (tmp && tmp->next)
-// 	{
-// 		tmp->data = tmp->next->data;
-// 		tmp = tmp->next;
-// 	}
-// 	tmp->data = value;
-// 	printf("ra\n");
-// }
-void	rotate_a(t_list **lst)
+void	rotate(t_stack **head)
 {
-	t_list	*head;
-	t_list	*tail;
+	t_stack	*first;
+	t_stack	*tail;
 
-	if (!lst || !*lst || !(*lst)->next)
+	if (!head || !*head || !(*head)->next)
 		return ;
-	head = *lst;
-	*lst = head->next;
-	head->next = NULL;
-	tail = *lst;
+	first = *head;
+	*head = first->next;
+	first->next = NULL;
+	tail = *head;
 	while (tail && tail->next)
 		tail = tail->next;
-	tail->next = head;
+	tail->next = first;
+}
+
+void	rotate_a(t_stack **stack_a)
+{
+	if (!stack_a || !*stack_a || !(*stack_a)->next)
+		return ;
+	rotate(stack_a);
 	write(1, "ra\n", 3);
 }
 
-// rapitso ndray oooo
-void	reverse_rotate_a(t_list **lst)
+void	rotate_b(t_stack **stack_b)
 {
-	t_list	*tail;
-	t_list	*head;
-
-	if (!lst || !*lst || !(*lst)->next)
+	if (!stack_b || !*stack_b || !(*stack_b)->next)
 		return ;
-	tail = *lst;
-	while (tail && tail->next)
-	{
-		head = tail;
-		tail = tail->next;
-	}
-	head->next = NULL;
-	tail->next = *lst;
-	*lst = tail;
-	write(1, "rra\n", 4);
+	rotate(stack_b);
+	write(1, "rb\n", 3);
+}
+
+void	rotate_a_and_b(t_stack **stack_a, t_stack **stack_b)
+{
+	if (!stack_a || !stack_b)
+		return ;
+	if (!*stack_a || !(*stack_a)->next || !*stack_b || !(*stack_b)->next)
+		return ;
+	rotate(stack_a);
+	rotate(stack_b);
+	write(1, "rr\n", 3);
 }

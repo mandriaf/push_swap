@@ -6,11 +6,26 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:08:50 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/05/29 14:34:16 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/04 10:10:51 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	ft_is_digit(const char *s)
+{
+	if (!s)
+		exit(0);
+	if (*s == '+' || *s == '-')
+		s++;
+	while (*s)
+	{
+		if (*s < '0' || *s > '9')
+			return (0);
+		s++;
+	}
+	return (1);
+}
 
 void	check_argument(int argc, char **argv)
 {
@@ -22,17 +37,10 @@ void	check_argument(int argc, char **argv)
 		exit(-1);
 	while (i < argc)
 	{
-		j = 0;
-		if ((argv[i][0]) == '+' || argv[i][0] == '-')
-			j++;
-		while (argv[i][j])
+		if (!ft_is_digit(argv[i]))
 		{
-			if (argv[i][j] < '0' || argv[i][j] > '9')
-			{
-				write(2, "Error\n", 6);
-				exit(-1);
-			}
-			j++;
+			write(1, "Error\n", 6);
+			exit (-1);
 		}
 		i++;
 	}

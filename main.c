@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+// t_stack	*sort_list(t_stack *lst, int (*cmp)(int, int));
 // static int	ft_strlen(const char *s)
 // {
 // 	int	i;
@@ -45,7 +45,7 @@ static t_stack	*new_stack(int data)
 	new->next = NULL;
 	return (new);
 }
-
+//12 0 1 -1 10
 int	main(int argc, char **argv)
 {
 	int		i;
@@ -62,11 +62,10 @@ int	main(int argc, char **argv)
 		lstadd_back(&stack_a, new_stack(ft_atoi(argv[i])));
 		i++;
 	}
-	printf("Avant tri:\n");
-	print_list(&stack_a);
-	if (argc == 4)
-		sort_three(&stack_a);
-	printf("Stack A:\n");
+	// printf("Avant tri:\n");
+	// print_list(&stack_a);
+	sort_three(&stack_a);
+	// printf("Stack A:\n");
 	print_list(&stack_a);
 	return (0);
 }

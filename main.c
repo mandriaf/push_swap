@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 // t_stack	*sort_list(t_stack *lst, int (*cmp)(int, int));
 // static int	ft_strlen(const char *s)
 // {
@@ -45,27 +46,38 @@ static t_stack	*new_stack(int data)
 	new->next = NULL;
 	return (new);
 }
-//12 0 1 -1 10
+
 int	main(int argc, char **argv)
 {
 	int		i;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
+	char	**tmp;
 
-	i = 1;
+	i = 0;
 	stack_a = NULL;
 	stack_b = NULL;
-	stack_b = new_stack(15);
-	check_argument(argc, argv);
-	while (i < argc)
+	// check_argument(argc, argv); //mila verifier-na kely
+	if (argc == 2)
 	{
-		lstadd_back(&stack_a, new_stack(ft_atoi(argv[i])));
-		i++;
+		tmp = ft_split(argv[1], ' ');
+		while (tmp[i])
+		{
+			lstadd_back(&stack_a, new_stack(ft_atoi(tmp[i])));
+			i++;
+		}
 	}
-	// printf("Avant tri:\n");
-	// print_list(&stack_a);
+	else
+	{
+		while (i < argc)
+		{
+			lstadd_back(&stack_a, new_stack(ft_atoi(argv[i])));
+			i++;
+		}
+	}
 	sort_three(&stack_a);
-	// printf("Stack A:\n");
 	print_list(&stack_a);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }

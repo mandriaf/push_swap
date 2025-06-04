@@ -6,15 +6,15 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:59:14 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/05/29 13:35:37 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/04 14:20:56 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -42,5 +42,6 @@ void				swap_a(t_stack **stack_a);
 void				swap_b(t_stack **stack_b);
 void				sort_three(t_stack **head);
 void				print_list(t_stack **head);
-
+void				free_stack(t_stack **head);
+char				**ft_split(char const *s, char c);
 #endif

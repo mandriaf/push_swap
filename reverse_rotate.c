@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 08:26:28 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/05/29 09:39:53 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/06 12:07:39 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	reverse_rotate_b(t_stack **stack_b)
 	if (!stack_b || !*stack_b || !(*stack_b)->next)
 		return ;
 	reverse_rotate(stack_b);
-	write(1, "rra\n", 4);
+	write(1, "rrb\n", 4);
 }
 
 void	reverse_rotate_a_and_b(t_stack **stack_a, t_stack **stack_b)

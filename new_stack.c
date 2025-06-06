@@ -1,47 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   argument.c                                         :+:      :+:    :+:   */
+/*   new_stack.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/28 13:08:50 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/06 09:17:42 by mandriaf         ###   ########.fr       */
+/*   Created: 2025/06/05 09:36:45 by mandriaf          #+#    #+#             */
+/*   Updated: 2025/06/06 11:02:56 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_is_digit(const char *s)
+t_stack	*new_stack(int data)
 {
-	if (!s)
-		exit(0);
-	if (*s == '+' || *s == '-')
-		s++;
-	while (*s)
-	{
-		if (*s < '0' || *s > '9')
-			return (0);
-		s++;
-	}
-	return (1);
-}
+	t_stack	*new;
 
-void	check_argument(int argc, char **argv)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	if (!argv || argc < 2)
-		exit(-1);
-	while (i < argc)
-	{
-		if (!ft_is_digit(argv[i]))
-		{
-			write(1, "Error\n", 6);
-			exit (-1);
-		}
-		i++;
-	}
+	new = malloc(sizeof(t_stack));
+	if (!new)
+		return (NULL);
+	new->data = data;
+	new->index = -1;
+	new->next = NULL;
+	return (new);
 }

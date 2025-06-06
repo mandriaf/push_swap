@@ -1,47 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   argument.c                                         :+:      :+:    :+:   */
+/*   stack_size.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/28 13:08:50 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/06 09:17:42 by mandriaf         ###   ########.fr       */
+/*   Created: 2025/06/05 10:19:57 by mandriaf          #+#    #+#             */
+/*   Updated: 2025/06/06 09:25:52 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_is_digit(const char *s)
+int	stack_size(t_stack **a)
 {
-	if (!s)
-		exit(0);
-	if (*s == '+' || *s == '-')
-		s++;
-	while (*s)
-	{
-		if (*s < '0' || *s > '9')
-			return (0);
-		s++;
-	}
-	return (1);
-}
+	int		size;
+	t_stack	*tmp;
 
-void	check_argument(int argc, char **argv)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	if (!argv || argc < 2)
-		exit(-1);
-	while (i < argc)
+	if (!a || !*a)
+		return (-1);
+	size = 0;
+	tmp = *a;
+	while (tmp)
 	{
-		if (!ft_is_digit(argv[i]))
-		{
-			write(1, "Error\n", 6);
-			exit (-1);
-		}
-		i++;
+		size++;
+		tmp = tmp->next;
 	}
+	return (size);
 }

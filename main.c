@@ -35,49 +35,39 @@
 // 	return (a <= b);
 // }
 
-static t_stack	*new_stack(int data)
-{
-	t_stack	*new;
-
-	new = malloc(sizeof(t_stack));
-	if (!new)
-		return (NULL);
-	new->data = data;
-	new->next = NULL;
-	return (new);
-}
-
 int	main(int argc, char **argv)
 {
 	int		i;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	char	**tmp;
 
-	i = 0;
+	i = 1;
 	stack_a = NULL;
 	stack_b = NULL;
-	// check_argument(argc, argv); //mila verifier-na kely
-	if (argc == 2)
+	check_argument(argc, argv); //mila verifier-na kely
+	while (i < argc)
 	{
-		tmp = ft_split(argv[1], ' ');
-		while (tmp[i])
-		{
-			lstadd_back(&stack_a, new_stack(ft_atoi(tmp[i])));
-			i++;
-		}
+		lstadd_back(&stack_a, new_stack(ft_atoi(argv[i])));
+		i++;
+	}
+	int	*tab = create_tab(&stack_a);
+	sort_tab(tab, &stack_a);
+	assign_index(tab, &stack_a);
+	// t_stack *t = stack_a;
+	// while (t)
+	// {
+	// 	printf("index %d\tvalue %d\n", t->index, t->data);
+	// 	t = t->next;
+	// }
+	if (stack_size(&stack_a) == 2)
+	{
+		if (stack_a->data > stack_a->next->data)
+			swap_a(&stack_a);
 	}
 	else
-	{
-		while (i < argc)
-		{
-			lstadd_back(&stack_a, new_stack(ft_atoi(argv[i])));
-			i++;
-		}
-	}
-	sort_three(&stack_a);
-	print_list(&stack_a);
-	free_stack(&stack_a);
-	free_stack(&stack_b);
+		small_sort(&stack_a, &stack_b);
+	// print_list(&stack_a);
+	// free_stack(&stack_a);
+	// free_stack(&stack_b);
 	return (0);
 }

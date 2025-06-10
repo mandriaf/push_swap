@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:08:52 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/06 12:16:07 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/10 10:42:39 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,19 @@ static void	min_to_top(t_stack **a, int min)
 	pos = find_pos_min(a, min);
 	if (pos <= size / 2)
 	{
-		while (pos-- > 0)
+		while (pos > 0)
+		{
 			rotate_a(a);
+			pos--;
+		}
 	}
 	else
 	{
-		while (pos++ < size)
+		while (pos < size)
+		{
 			reverse_rotate_a(a);
+			pos++;
+		}
 	}
 }
 
@@ -93,11 +99,13 @@ void	small_sort(t_stack **a, t_stack **b)
 
 	if (!a || !*a || !(*a)->next)
 		return ;
-	while (stack_size(a) > 3 && !is_sorted(a))
+	while (stack_size(a) > 3)
 	{
 		min = min_value(a);
 		pos = find_pos_min(a, min);
 		min_to_top(a, min);
+		if (is_sorted(a))
+			break ;
 		push_b(a, b);
 	}
 	sort_three(a);

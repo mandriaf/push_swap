@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 09:42:36 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 09:38:06 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/16 20:48:38 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ void	sort(t_stack **a, t_stack **b)
 	else if (stack_size(a) == 3)
 		sort_three(a);
 	else
-		small_sort(a, b);
+		sort_four_and_five(a, b);
 }

@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:59:14 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 13:21:49 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/16 20:44:32 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void				swap_a_and_b(t_stack **stack_a, t_stack **stack_b);
 void				swap_a(t_stack **stack_a);
 void				swap_b(t_stack **stack_b);
 void				sort_three(t_stack **head);
-void				small_sort(t_stack **a, t_stack **b);
+void				sort_four_and_five(t_stack **a, t_stack **b);
 void				sort(t_stack **a, t_stack **b);
 void				free_stack(t_stack **head);
 char				**ft_split(char const *s, char c);
@@ -57,5 +57,6 @@ void				sort_tab(int *tab, t_stack **a);
 int					ft_strlen(const char *s);
 char				*ft_strdup(const char *s);
 char				*ft_strjoin(const char *s1, const char *s2);
-
+int					find_min(t_stack *stack);
+int					find_max(t_stack *stack);
 #endif

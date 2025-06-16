@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:49:22 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 14:21:02 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/16 20:43:55 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*join_args(int argc, char **argv);
-t_stack	*init_stack(int argc, char **argv);
+char		*join_args(int argc, char **argv);
+t_stack		*init_stack(int argc, char **argv);
 
-// static void	print_stack(t_stack *a)
-// {
-// 	while (a)
-// 	{
-// 		printf("%d -> ", a->data);
-// 		a = a->next;
-// 	}
-// 	printf("NULL\n");
-// }
+static int	is_space_only(int argc, char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (i < argc)
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if (argv[i][j] != ' ')
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
 
 int	main(int argc, char **argv)
 {
@@ -37,6 +47,11 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (argc < 2)
 		return (0);
+	if (is_space_only(argc, argv))
+	{
+		write(2, "Error\n", 6);
+		exit(1);
+	}
 	stack_a = init_stack(argc, argv);
 	if (check_double(&stack_a))
 	{

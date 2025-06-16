@@ -6,29 +6,29 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:08:52 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 13:57:54 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/16 20:44:16 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	min_value(t_stack **a)
-{
-	int		min;
-	t_stack	*tmp;
+// static int	min_value(t_stack **a)
+// {
+// 	int		min;
+// 	t_stack	*tmp;
 
-	if (!a || !*a)
-		exit(1);
-	tmp = *a;
-	min = tmp->data;
-	while (tmp)
-	{
-		if (min > tmp->data)
-			min = tmp->data;
-		tmp = tmp->next;
-	}
-	return (min);
-}
+// 	if (!a || !*a)
+// 		exit(1);
+// 	tmp = *a;
+// 	min = tmp->data;
+// 	while (tmp)
+// 	{
+// 		if (min > tmp->data)
+// 			min = tmp->data;
+// 		tmp = tmp->next;
+// 	}
+// 	return (min);
+// }
 
 static int	find_pos_min(t_stack **a, int min)
 {
@@ -92,7 +92,7 @@ static int	is_sorted(t_stack **a)
 	return (1);
 }
 
-void	small_sort(t_stack **a, t_stack **b)
+void	sort_four_and_five(t_stack **a, t_stack **b)
 {
 	int	min;
 	int	pos;
@@ -103,7 +103,7 @@ void	small_sort(t_stack **a, t_stack **b)
 	min = 0;
 	while (stack_size(a) > 3)
 	{
-		min = min_value(a);
+		min = find_min(*a);
 		pos = find_pos_min(a, min);
 		min_to_top(a, min);
 		if (is_sorted(a))

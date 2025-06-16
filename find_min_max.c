@@ -1,30 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_size.c                                       :+:      :+:    :+:   */
+/*   find_min_max.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/05 10:19:57 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 20:48:49 by mandriaf         ###   ########.fr       */
+/*   Created: 2025/06/16 20:33:35 by mandriaf          #+#    #+#             */
+/*   Updated: 2025/06/16 20:38:18 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_size(t_stack **a)
+int	find_min(t_stack *stack)
 {
-	int		size;
-	t_stack	*tmp;
+	int	min;
 
-	if (!a || !*a)
+	if (!stack)
 		return (-1);
-	size = 0;
-	tmp = *a;
-	while (tmp)
+	min = stack->data;
+	while (stack)
 	{
-		size++;
-		tmp = tmp->next;
+		if (min > stack->data)
+			min = stack->data;
+		stack = stack->next;
 	}
-	return (size);
+	return (min);
+}
+
+int	find_max(t_stack *stack)
+{
+	int	max;
+
+	if (!stack)
+		return (-1);
+	max = stack->data;
+	while (stack)
+	{
+		if (max < stack->data)
+			max = stack->data;
+		stack = stack->next;
+	}
+	return (max);
 }

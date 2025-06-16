@@ -6,28 +6,21 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:08:52 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 21:27:53 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/16 21:33:17 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	is_sorted(t_stack **a)
+static int	is_sorted(t_stack *a)
 {
-	t_stack	*tmp;
-	t_stack	*tmp1;
-
-	tmp = *a;
-	while (tmp->next)
+	if (!a)
+		return (-1);
+	while (a)
 	{
-		tmp1 = tmp->next;
-		while (tmp1)
-		{
-			if (tmp->data > tmp1->data)
-				return (0);
-			tmp1 = tmp1->next;
-		}
-		tmp = tmp->next;
+		if (a->data > a->next->data)
+			return (0);
+		a = a->next;
 	}
 	return (1);
 }
@@ -42,7 +35,7 @@ void	sort_four_and_five(t_stack **a, t_stack **b)
 	{
 		min = find_min(*a);
 		min_to_top(a, min);
-		if (is_sorted(a))
+		if (is_sorted(*a))
 			break ;
 		push_b(a, b);
 	}

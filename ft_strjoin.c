@@ -6,12 +6,11 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 09:40:52 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 11:16:59 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/16 22:30:36 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
@@ -31,7 +30,6 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	join[i++] = ' ';
 	while (*s2)
 		join[i++] = *s2++;
-	join[i++] = ' ';
 	join[i] = '\0';
 	return (join);
 }

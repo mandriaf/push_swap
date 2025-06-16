@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 10:43:18 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 14:36:40 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/16 22:38:48 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,22 @@ char	*join_args(int argc, char **argv)
 	return (argv_joined);
 }
 
+static int	is_valid_number(char *s)
+{
+	if (!s)
+		exit (1);
+	if (*s == '+' || *s == '-')
+		s++;
+	if (!*s)
+		return (0);
+	while (*s)
+	{
+		if (*s < '0' || *s > '9')
+			return (0);
+		s++;
+	}
+	return (1);
+}
 t_stack	*init_stack(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -56,20 +72,19 @@ t_stack	*init_stack(int argc, char **argv)
 	int		i;
 	char	*tmp_argv;
 
-	i = 0;
 	stack_a = NULL;
+	i = 0;
 	tmp_argv = join_args(argc, argv);
-	check_argument(tmp_argv);
 	tmp = ft_split(tmp_argv, ' ');
 	free(tmp_argv);
 	while (tmp[i])
 	{
-		if (ft_atoi(tmp[i]) < INT_MIN || ft_atoi(tmp[i]) > INT_MAX)
+		if (!is_valid_number(tmp[i]) || ft_atoi(tmp[i]) < INT_MIN || ft_atoi(tmp[i]) > INT_MAX)
 		{
 			write(2, "Error\n", 6);
 			free_all_split(tmp, i);
 			free_stack(&stack_a);
-			return (NULL);
+			exit(1);
 		}
 		lstadd_back(&stack_a, new_stack(ft_atoi(tmp[i])));
 		i++;

@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 11:54:53 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/13 09:03:10 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/16 13:51:42 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	assign_index(int *tab, t_stack **a)
 			if (tab[i] == tmp->data)
 			{
 				tmp->index = i;
-				break;
+				break ;
 			}
 			i++;
 		}

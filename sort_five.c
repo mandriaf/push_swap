@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:08:52 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/13 09:46:17 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/16 13:57:54 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ void	small_sort(t_stack **a, t_stack **b)
 
 	if (!a || !*a || !(*a)->next)
 		return ;
+	pos = 0;
+	min = 0;
 	while (stack_size(a) > 3)
 	{
 		min = min_value(a);

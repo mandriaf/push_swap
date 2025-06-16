@@ -6,12 +6,13 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:59:14 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/13 10:40:31 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/16 13:21:49 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
+# include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -24,7 +25,7 @@ typedef struct s_stack
 }					t_stack;
 
 t_stack				*new_stack(int data);
-void				check_argument(int argc, char **argv);
+void				check_argument(char *s);
 int					check_double(t_stack **a);
 long				ft_atoi(const char *nptr);
 void				lstadd_back(t_stack **lst, t_stack *new);
@@ -52,4 +53,9 @@ int					stack_size(t_stack **a);
 int					*create_tab(t_stack **a);
 void				assign_index(int *tab, t_stack **a);
 void				sort_tab(int *tab, t_stack **a);
+//-----------------------------
+int					ft_strlen(const char *s);
+char				*ft_strdup(const char *s);
+char				*ft_strjoin(const char *s1, const char *s2);
+
 #endif

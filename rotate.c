@@ -6,12 +6,11 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 12:08:16 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/05/29 14:34:14 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/13 11:31:47 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	rotate(t_stack **head)
 {

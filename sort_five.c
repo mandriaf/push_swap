@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:08:52 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/10 10:42:39 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/13 09:46:17 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,24 +112,3 @@ void	small_sort(t_stack **a, t_stack **b)
 	while (*b)
 		push_a(a, b);
 }
-
-// int main (void)
-// {
-// 	t_stack *a;
-// 	t_stack	*b;
-
-// 	a = NULL;
-// 	b = NULL;
-// 	lstadd_back(&a, new_stack(2));
-// 	lstadd_back(&a, new_stack(-100));
-// 	lstadd_back(&a, new_stack(0));
-// 	lstadd_back(&a, new_stack(-3));
-// 	lstadd_back(&a, new_stack(150));
-// 	lstadd_back(&a, new_stack(-200));
-// 	lstadd_back(&a, new_stack(-165498));
-// 	lstadd_back(&a, new_stack(20033));
-// 	lstadd_back(&a, new_stack(20));
-// 	lstadd_back(&a, new_stack(42));
-// 	small_sort(&a, &b);
-// 	return (0);
-// }

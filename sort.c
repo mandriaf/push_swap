@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/20 13:12:23 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/13 11:31:13 by mandriaf         ###   ########.fr       */
+/*   Created: 2025/06/13 09:42:36 by mandriaf          #+#    #+#             */
+/*   Updated: 2025/06/16 09:24:48 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atoi(const char *nptr)
+void	sort(t_stack **a, t_stack **b)
 {
-	long	nb;
-	int		s;
-	int		i;
-
-	if (!nptr)
-		exit(-1);
-	nb = 0;
-	i = 0;
-	s = 1;
-	while (nptr[i] == ' ')
-		i++;
-	if (nptr[i] == '+' || nptr[i] == '-')
+	if (!a || !*a)
+		return ;
+	if (stack_size(a) == 2)
 	{
-		if (nptr[i] == '-')
-			s = -s;
-		i++;
+		if ((*a)->data > (*a)->next->data)
+			swap_a(a);
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		nb = (nb * 10) + (nptr[i] - '0');
-		i++;
-	}
-	return (nb * s);
+	else if (stack_size(a) == 3)
+		sort_three(a);
+	else
+		small_sort(a, b);
 }

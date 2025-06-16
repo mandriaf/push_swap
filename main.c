@@ -1,7 +1,7 @@
 #include "push_swap.h"
+#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
 
 int	main(int argc, char **argv)
 {
@@ -13,34 +13,24 @@ int	main(int argc, char **argv)
 	i = 1;
 	stack_a = NULL;
 	stack_b = NULL;
-	check_argument(argc, argv); //mila verifier-na kely
+	check_argument(argc, argv);
 	while (i < argc)
 	{
 		if (ft_atoi(argv[i]) < INT_MIN || ft_atoi(argv[i]) > INT_MAX)
 		{
-			write (2, "Error\n", 7);
-			exit (1);
+			write(2, "Error\n", 6);
+			exit(1);
 		}
 		lstadd_back(&stack_a, new_stack(ft_atoi(argv[i])));
 		i++;
 	}
-	int	*tab = create_tab(&stack_a);
-	// sort_tab(tab, &stack_a);
-	// assign_index(tab, &stack_a);
-	// t_stack *t = stack_a;
-	// while (t)
-	// {
-	// 	printf("index %d\tvalue %d\n", t->index, t->data);
-	// 	t = t->next;
-	// }
-	if (stack_size(&stack_a) == 2)
+	if (check_double(&stack_a))
 	{
-		if (stack_a->data > stack_a->next->data)
-			swap_a(&stack_a);
+		write(2, "Error\n", 6);
+		free_stack(&stack_a);
+		exit (1);
 	}
-	else
-		small_sort(&stack_a, &stack_b);
-	// print_list(&stack_a);
+	sort(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

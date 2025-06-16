@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 14:05:21 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/04 14:20:14 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/10 14:22:23 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static char	**ft_copy(char **sp, const char *s, char c)
 		l_word = len_words(s, c, &x);
 		sp[i] = malloc(sizeof(char) * (l_word + 1));
 		if (sp[i] == NULL)
-			free(sp[i]);
+			return (NULL);
 		while (j < l_word)
 		{
 			while (s[y] == c)

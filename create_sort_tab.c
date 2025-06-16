@@ -1,43 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_list.c                                        :+:      :+:    :+:   */
+/*   create_sort_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 11:54:53 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/06 11:58:42 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/13 09:03:10 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_stack	*sort_list(t_stack *lst, int (*cmp)(int, int))
-{
-	int		tmp_data;
-	t_stack	*lstnext;
-	t_stack	*tmp;
-
-	if (!lst || !cmp)
-		return (NULL);
-	tmp = lst;
-	while (tmp->next)
-	{
-		lstnext = tmp->next;
-		while (lstnext)
-		{
-			if (!cmp(tmp->data, lstnext->data))
-			{
-				tmp_data = tmp->data;
-				tmp->data = lstnext->data;
-				lstnext->data = tmp_data;
-			}
-			lstnext = lstnext->next;
-		}
-		tmp = tmp->next;
-	}
-	return (lst);
-}
 
 int	*create_tab(t_stack **a)
 {

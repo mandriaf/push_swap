@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:49:22 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 20:43:55 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/16 21:47:43 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,31 @@
 char		*join_args(int argc, char **argv);
 t_stack		*init_stack(int argc, char **argv);
 
-static int	is_space_only(int argc, char **argv)
+static int	only_space(const char *s)
+{
+	if (!s)
+		return (-1);
+	while (*s)
+	{
+		if (*s != ' ')
+			return (0);
+		s++;
+	}
+	return (1);
+}
+
+static int	check_args(int argc, char **argv)
 {
 	int	i;
-	int	j;
 
 	i = 1;
 	while (i < argc)
 	{
-		j = 0;
-		while (argv[i][j])
-		{
-			if (argv[i][j] != ' ')
-				return (0);
-			j++;
-		}
+		if (only_space(argv[i]))
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 int	main(int argc, char **argv)
@@ -47,7 +54,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (argc < 2)
 		return (0);
-	if (is_space_only(argc, argv))
+	if (check_args(argc, argv))
 	{
 		write(2, "Error\n", 6);
 		exit(1);

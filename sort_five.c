@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:08:52 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 21:33:17 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/16 21:41:43 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 static int	is_sorted(t_stack *a)
 {
-	if (!a)
-		return (-1);
-	while (a)
+	while (a && a->next)
 	{
 		if (a->data > a->next->data)
 			return (0);

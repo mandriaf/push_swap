@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:08:50 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 14:18:48 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/16 14:37:08 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	check_argument(char *s)
 	{
 		if ((s[i] == '+' || s[i] == '-')
 			&& (s[i + 1] != '+' || s[i + 1] != '-'))
-			i++;
-		if (s[i] == ' ')
 			i++;
 		if (ft_is_digit(s[i]) == 0)
 		{

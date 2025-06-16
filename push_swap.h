@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:59:14 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 20:44:32 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/16 21:15:33 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@ void				sort_tab(int *tab, t_stack **a);
 int					ft_strlen(const char *s);
 char				*ft_strdup(const char *s);
 char				*ft_strjoin(const char *s1, const char *s2);
+//-----sort_Util-------------
 int					find_min(t_stack *stack);
 int					find_max(t_stack *stack);
+int					find_pos(t_stack **a, int min);
+void				min_to_top(t_stack **a, int min);
 #endif

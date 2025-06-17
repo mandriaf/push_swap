@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_five.c                                        :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/04 11:08:52 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/17 09:35:11 by mandriaf         ###   ########.fr       */
+/*   Created: 2025/06/17 09:34:46 by mandriaf          #+#    #+#             */
+/*   Updated: 2025/06/17 10:21:26 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_four_and_five(t_stack **a, t_stack **b)
+int	is_sorted(t_stack *a)
 {
-	int	min;
-
-	if (!a || !*a || !(*a)->next)
-		return ;
-	while (stack_size(a) > 3)
+	while (a && a->next)
 	{
-		min = find_min(*a);
-		min_to_top(a, min);
-		if (is_sorted(*a))
-			break ;
-		push_b(a, b);
+		if (a->data > a->next->data)
+			return (0);
+		a = a->next;
 	}
-	sort_three(a);
-	while (*b)
-		push_a(a, b);
+	return (1);
 }

@@ -6,17 +6,11 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:49:22 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 21:47:43 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/17 09:37:21 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
-
-char		*join_args(int argc, char **argv);
-t_stack		*init_stack(int argc, char **argv);
 
 static int	only_space(const char *s)
 {

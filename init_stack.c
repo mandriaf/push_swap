@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 10:43:18 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 22:38:48 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/17 10:22:42 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*join_args(int argc, char **argv)
 static int	is_valid_number(char *s)
 {
 	if (!s)
-		exit (1);
+		exit(1);
 	if (*s == '+' || *s == '-')
 		s++;
 	if (!*s)
@@ -65,6 +65,7 @@ static int	is_valid_number(char *s)
 	}
 	return (1);
 }
+
 t_stack	*init_stack(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -79,7 +80,8 @@ t_stack	*init_stack(int argc, char **argv)
 	free(tmp_argv);
 	while (tmp[i])
 	{
-		if (!is_valid_number(tmp[i]) || ft_atoi(tmp[i]) < INT_MIN || ft_atoi(tmp[i]) > INT_MAX)
+		if (!is_valid_number(tmp[i]) || ft_atoi(tmp[i]) < INT_MIN
+			|| ft_atoi(tmp[i]) > INT_MAX)
 		{
 			write(2, "Error\n", 6);
 			free_all_split(tmp, i);

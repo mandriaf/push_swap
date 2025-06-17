@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:59:14 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 21:15:33 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/17 09:37:07 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct s_stack
 t_stack				*new_stack(int data);
 void				check_argument(char *s);
 int					check_double(t_stack **a);
+char				*join_args(int argc, char **argv);
+t_stack				*init_stack(int argc, char **argv);
 long				ft_atoi(const char *nptr);
 void				lstadd_back(t_stack **lst, t_stack *new);
 void				push_a(t_stack **stack_a, t_stack **stack_b);
@@ -58,6 +60,7 @@ int					ft_strlen(const char *s);
 char				*ft_strdup(const char *s);
 char				*ft_strjoin(const char *s1, const char *s2);
 //-----sort_Util-------------
+int					is_sorted(t_stack *a);
 int					find_min(t_stack *stack);
 int					find_max(t_stack *stack);
 int					find_pos(t_stack **a, int min);

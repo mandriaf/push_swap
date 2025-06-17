@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:49:22 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/17 09:37:21 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/17 22:46:08 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,16 @@ static int	check_args(int argc, char **argv)
 	return (0);
 }
 
+// static void	print_stack(t_stack *stack)
+// {
+// 	while (stack)
+// 	{
+// 		printf("%d -> ", stack->data);
+// 		stack = stack->next;
+// 	}
+// 	printf("NULL\n");
+// }
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -61,6 +71,8 @@ int	main(int argc, char **argv)
 		exit(1);
 	}
 	sort(&stack_a, &stack_b);
+	// print_stack(stack_a);
+	// print_stack(stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:59:14 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/17 09:37:07 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/17 21:52:04 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,5 @@ int					find_min(t_stack *stack);
 int					find_max(t_stack *stack);
 int					find_pos(t_stack **a, int min);
 void				min_to_top(t_stack **a, int min);
+void				big_sort(t_stack **a, t_stack **b);
 #endif

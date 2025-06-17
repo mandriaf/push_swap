@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 11:54:53 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 13:51:42 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/17 20:40:57 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int	*create_tab(t_stack **a)
 	int		i;
 	t_stack	*tmp;
 
-	if (!a || !*a || !(*a)->next)
-		return (NULL);
 	tab = malloc(sizeof(int) * stack_size(a));
 	if (!tab)
 		return (NULL);

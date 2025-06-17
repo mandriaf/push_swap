@@ -6,18 +6,18 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 10:43:18 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/17 10:22:42 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/17 18:15:45 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	free_all_split(char **s, int j)
+static void	free_all_split(char **s)
 {
 	int	i;
 
 	i = 0;
-	while (i <= j)
+	while (s[i])
 	{
 		free(s[i]);
 		i++;
@@ -84,13 +84,13 @@ t_stack	*init_stack(int argc, char **argv)
 			|| ft_atoi(tmp[i]) > INT_MAX)
 		{
 			write(2, "Error\n", 6);
-			free_all_split(tmp, i);
+			free_all_split(tmp);
 			free_stack(&stack_a);
 			exit(1);
 		}
 		lstadd_back(&stack_a, new_stack(ft_atoi(tmp[i])));
 		i++;
 	}
-	free_all_split(tmp, i);
+	free_all_split(tmp);
 	return (stack_a);
 }

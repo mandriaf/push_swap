@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 16:04:28 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/21 17:35:21 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/21 17:38:38 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	get_cost(t_stack *stack, int target)
 
 void	calculate_move_top(t_stack *a, t_stack *b)
 {
-	int	target;
+	int		target;
 	t_stack	*tmp;
 
 	tmp = a;

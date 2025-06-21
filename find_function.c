@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 10:52:10 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/21 11:11:28 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/21 16:11:55 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ int	find_max(t_stack *stack)
 	return (max);
 }
 
-int	find_pos_target(t_stack **a, int target)
+int	find_pos_target(t_stack **stack, int target)
 {
 	int		i;
 	t_stack	*tmp;
 
 	i = 0;
-	tmp = *a;
+	tmp = *stack;
 	while (tmp)
 	{
 		if (tmp->data == target)

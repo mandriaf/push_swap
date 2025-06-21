@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:59:14 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/17 21:52:04 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/21 10:57:30 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,13 @@ long				ft_atoi(const char *nptr);
 void				lstadd_back(t_stack **lst, t_stack *new);
 void				push_a(t_stack **stack_a, t_stack **stack_b);
 void				push_b(t_stack **stack_a, t_stack **stack_b);
-void				rotate(t_stack **head);
 void				rotate_a(t_stack **stack_a);
 void				rotate_b(t_stack **stack_b);
 void				rotate_a_and_b(t_stack **stack_a, t_stack **stack_b);
-void				reverse_rotate(t_stack **head);
 void				reverse_rotate_a(t_stack **stack_a);
 void				reverse_rotate_b(t_stack **stack_b);
 void				reverse_rotate_a_and_b(t_stack **stack_a,
 						t_stack **stack_b);
-void				swap(t_stack **stack);
 void				swap_a_and_b(t_stack **stack_a, t_stack **stack_b);
 void				swap_a(t_stack **stack_a);
 void				swap_b(t_stack **stack_b);
@@ -63,7 +60,8 @@ char				*ft_strjoin(const char *s1, const char *s2);
 int					is_sorted(t_stack *a);
 int					find_min(t_stack *stack);
 int					find_max(t_stack *stack);
-int					find_pos(t_stack **a, int min);
-void				min_to_top(t_stack **a, int min);
+int					find_pos(t_stack **a, int target);
+void				target_a_to_top(t_stack **a, int target);
+void				target_a_to_top_b(t_stack **b, int min);
 void				big_sort(t_stack **a, t_stack **b);
 #endif

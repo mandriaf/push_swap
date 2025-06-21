@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 09:40:52 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 22:30:36 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/21 10:54:53 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,3 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	join[i] = '\0';
 	return (join);
 }
-
-// int	main(void)
-// {
-// 	char *x = ft_strjoin("kakana", "maloto");
-// 	printf("%s\n", x);
-// 	free(x);
-// 	return (0);
-// }

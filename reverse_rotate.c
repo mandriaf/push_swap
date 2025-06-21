@@ -6,13 +6,13 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 08:26:28 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/06 12:07:39 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/21 10:53:20 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate(t_stack **head)
+static void	reverse_rotate(t_stack **head)
 {
 	t_stack	*tail;
 	t_stack	*first;

@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:08:52 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/17 22:15:32 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/21 10:50:21 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	sort_four_and_five(t_stack **a, t_stack **b)
 		return ;
 	while (stack_size(a) > 3)
 	{
-		min_to_top(a, find_min(*a));
+		target_a_to_top(a, find_min(*a));
 		if (is_sorted(*a))
 			break ;
 		push_b(a, b);

@@ -6,13 +6,13 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 08:39:35 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/16 14:14:45 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/21 10:54:03 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack **stack)
+static void	swap(t_stack **stack)
 {
 	t_stack	*tmp;
 

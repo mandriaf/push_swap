@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 16:04:28 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/21 17:38:38 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/21 17:58:47 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,24 +46,23 @@ void	calculate_move_top(t_stack *a, t_stack *b)
 	}
 }
 
-int	best_value_push_b(t_stack *a, t_stack *b)
+int	best_value_push_b(t_stack *stack)
 {
 	int	cost;
 	int	current;
 	int	best;
 
-	calculate_move_top(a, b);
-	current = absolute_value(a->cost_a) + absolute_value(a->cost_b);
-	best = a->data;
-	while (a)
+	current = absolute_value(stack->cost_a) + absolute_value(stack->cost_b);
+	best = stack->data;
+	while (stack)
 	{
-		cost = absolute_value(a->cost_a) + absolute_value(a->cost_b);
+		cost = absolute_value(stack->cost_a) + absolute_value(stack->cost_b);
 		if (cost < current)
 		{
-			best = a->data;
+			best = stack->data;
 			current = cost;
 		}
-		a = a->next;
+		stack = stack->next;
 	}
 	return (best);
 }

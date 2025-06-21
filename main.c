@@ -6,12 +6,12 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:49:22 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/21 17:25:08 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/21 18:00:12 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-int	best_value_push_b(t_stack *a, t_stack *b);
+int	best_value_push_b(t_stack *a);
 static int	only_space(const char *s)
 {
 	if (!s)
@@ -80,7 +80,8 @@ int	main(int argc, char **argv)
 	push_b(&stack_a, &stack_b);
 	push_b(&stack_a, &stack_b);
 	push_b(&stack_a, &stack_b);
-	// calculate_move_top(stack_a, stack_b);
+	push_b(&stack_a, &stack_b);
+	calculate_move_top(stack_a, stack_b);
 	t_stack *tmp = stack_a;
 
 	printf("STACK A:\n");
@@ -93,7 +94,7 @@ int	main(int argc, char **argv)
 		printf("data = %d\tcout A = %d\tcout B = %d\n", tmp->data, tmp->cost_a, tmp->cost_b);
 		tmp = tmp->next;
 	}
-	int best = best_value_push_b(stack_a, stack_b);
+	int best = best_value_push_b(stack_a);
 	printf("best = %d\n", best);
 	sort(&stack_a, &stack_b);
 	free_stack(&stack_a);

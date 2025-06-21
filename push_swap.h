@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:59:14 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/21 11:18:37 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/21 14:14:40 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char				*join_args(int argc, char **argv);
 t_stack				*init_stack(int argc, char **argv);
 long				ft_atoi(const char *nptr);
 void				lstadd_back(t_stack **lst, t_stack *new);
-//------------operation-------------------------------------------------------------
+//------------operation------------------------------------------
 void				push_a(t_stack **stack_a, t_stack **stack_b);
 void				push_b(t_stack **stack_a, t_stack **stack_b);
 void				rotate_a(t_stack **stack_a);
@@ -46,7 +46,7 @@ void				reverse_rotate_a_and_b(t_stack **stack_a,
 void				swap_a_and_b(t_stack **stack_a, t_stack **stack_b);
 void				swap_a(t_stack **stack_a);
 void				swap_b(t_stack **stack_b);
-//------------sorting---------------------------------------------------------------------------
+//------------sorting---------------------------------------------------
 void				sort_three(t_stack **head);
 void				sort_four_and_five(t_stack **a, t_stack **b);
 void				sort(t_stack **a, t_stack **b);

@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:44:00 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/21 11:07:41 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/21 14:14:44 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,6 @@ static int	choice_target_to_a(t_stack *a, t_stack *b)
 	}
 	return (target);
 }
-
-
 
 void	big_sort(t_stack **a, t_stack **b)
 {

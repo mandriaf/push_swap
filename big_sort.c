@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:44:00 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/21 10:56:50 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/21 11:07:41 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	big_sort(t_stack **a, t_stack **b)
 	push_b(a, b);
 	while (stack_size(a) > 3)
 	{
-		target_a_to_top_b(b, choice_target_to_b(*a, *b));
+		target_b_to_top(b, choice_target_to_b(*a, *b));
 		push_b(a, b);
 	}
 	sort_three(a);

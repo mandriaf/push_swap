@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:59:14 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/21 11:15:03 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/21 11:18:37 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ typedef struct s_stack
 {
 	int				data;
 	int				index;
+	int				cost_a;
+	int				cost_b;
 	struct s_stack	*next;
 }					t_stack;
 

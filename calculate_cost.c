@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 16:04:28 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/21 17:58:47 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/22 19:04:35 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,69 @@ int	best_value_push_b(t_stack *stack)
 		stack = stack->next;
 	}
 	return (best);
+}
+
+static t_stack	*find_node(t_stack *stack, int target)
+{
+	while (stack)
+	{
+		if (stack->data == target)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
+}
+
+void push_b_with_cost(t_stack **a, t_stack **b)
+{
+	int best_value;
+	int target_in_b;
+	int cost_a;
+	int cost_b;
+	t_stack	*best_node;
+
+	// On suppose que les coûts ont déjà été calculés
+	best_value = best_value_push_b(*a); // On récupère la valeur avec le coût total minimal
+	best_node = find_node(*a, best_value);
+	target_in_b = choice_target_to_b(best_node, *b); // Où le placer dans B
+
+	cost_a = best_node->cost_a;
+	cost_b = get_cost(*b, target_in_b);
+
+	// Applique les doubles rotations si possible
+	while (cost_a > 0 && cost_b > 0)
+	{
+		rotate_a_and_b(a, b);
+		cost_a--;
+		cost_b--;
+	}
+	while (cost_a < 0 && cost_b < 0)
+	{
+		reverse_rotate_a_and_b(a, b);
+		cost_a++;
+		cost_b++;
+	}
+	// Applique les rotations restantes
+	while (cost_a > 0)
+	{
+		rotate_a(a);
+		cost_a--;
+	}
+	while (cost_a < 0)
+	{
+		reverse_rotate_a(a);
+		cost_a++;
+	}
+	while (cost_b > 0)
+	{
+		rotate_b(b);
+		cost_b--;
+	}
+	while (cost_b < 0)
+	{
+		reverse_rotate_b(b);
+		cost_b++;
+	}
+	// Puis on push
+	push_b(a, b);
 }

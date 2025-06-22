@@ -6,11 +6,14 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:44:00 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/21 16:16:26 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/22 18:54:58 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// void	double_move(t_stack **a, t_stack **b);
+void push_b_with_cost(t_stack **a, t_stack **b);
 
 void	big_sort(t_stack **a, t_stack **b)
 {
@@ -25,8 +28,8 @@ void	big_sort(t_stack **a, t_stack **b)
 	push_b(a, b);
 	while (stack_size(a) > 3)
 	{
-		target_b_to_top(b, choice_target_to_b(*a, *b));
-		push_b(a, b);
+		calculate_move_top(*a, *b);
+		push_b_with_cost(a, b);
 	}
 	sort_three(a);
 	while (*b)

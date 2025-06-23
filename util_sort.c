@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 20:33:35 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/22 18:49:12 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/23 10:54:01 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,15 @@ void	target_a_to_top(t_stack **a, int target)
 		while (pos++ < size)
 			reverse_rotate_a(a);
 	}
+}
+
+t_stack	*find_node(t_stack *stack, int target)
+{
+	while (stack)
+	{
+		if (stack->data == target)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
 }

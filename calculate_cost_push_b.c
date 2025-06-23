@@ -1,50 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculate_cost.c                                   :+:      :+:    :+:   */
+/*   calculate_cost_push_b.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 16:04:28 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/23 10:28:51 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/23 10:55:20 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static int	absolute_value(int value)
-{
-	if (value < 0)
-		return (-value);
-	return (value);
-}
-
-static int	get_cost(t_stack *stack, int target)
-{
-	int	size;
-	int	pos;
-
-	size = stack_size(&stack);
-	pos = find_pos_target(&stack, target);
-	if (pos <= size / 2)
-		return (pos);
-	return (pos - size);
-}
-
-void	calculate_move_top(t_stack *a, t_stack *b)
-{
-	int		target;
-	t_stack	*tmp;
-
-	tmp = a;
-	while (tmp)
-	{
-		target = choice_target_to_b(tmp, b);
-		tmp->cost_a = get_cost(a, tmp->data);
-		tmp->cost_b = get_cost(b, target);
-		tmp = tmp->next;
-	}
-}
 
 static int	best_value_push_b(t_stack *stack)
 {
@@ -65,17 +31,6 @@ static int	best_value_push_b(t_stack *stack)
 		stack = stack->next;
 	}
 	return (best);
-}
-
-static t_stack	*find_node(t_stack *stack, int target)
-{
-	while (stack)
-	{
-		if (stack->data == target)
-			return (stack);
-		stack = stack->next;
-	}
-	return (NULL);
 }
 
 void	push_b_with_cost(t_stack **a, t_stack **b)

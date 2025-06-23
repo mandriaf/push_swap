@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:59:14 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/23 10:36:17 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/23 10:55:08 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
+//--init stack and check argument--
 t_stack				*new_stack(int data);
 void				check_argument(char *s);
 int					check_double(t_stack **a);
@@ -68,13 +69,18 @@ int					find_pos_target(t_stack **a, int target);
 void				target_a_to_top(t_stack **a, int target);
 void				target_b_to_top(t_stack **b, int target);
 void				big_sort(t_stack **a, t_stack **b);
+t_stack				*find_node(t_stack *stack, int target);
 int					choice_target_to_a(t_stack *a, t_stack *b);
 int					choice_target_to_b(t_stack *a, t_stack *b);
 //---------calcule de cout----
-void				calculate_move_top(t_stack *a, t_stack *b);
+void				calculate_move_push_b(t_stack *a, t_stack *b);
 void				push_b_with_cost(t_stack **a, t_stack **b);
 void				double_move(t_stack **a, t_stack **b, int *cost_a,
 						int *cost_b);
 void				move_a_and_b(t_stack **a, t_stack **b, int *cost_a,
 						int *cost_b);
+//-----Calculate cost utils
+int					absolute_value(int value);
+int					get_cost(t_stack *stack, int target);
+
 #endif

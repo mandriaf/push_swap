@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 10:59:15 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/23 11:12:51 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/23 17:46:24 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ static int	best_value_push_a(t_stack *b)
 
 void	push_a_with_cost(t_stack **a, t_stack **b)
 {
-	int	best_value;
-	int	target_in_a;
-	int	cost_a;
-	int	cost_b;
+	int		best_value;
+	int		target_in_a;
+	int		cost_a;
+	int		cost_b;
 	t_stack	*best;
 
 	best_value = best_value_push_a(*b);

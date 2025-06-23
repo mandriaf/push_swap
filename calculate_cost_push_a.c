@@ -1,51 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calculate_cost_push_b.c                            :+:      :+:    :+:   */
+/*   calculate_cost_push_a.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/21 16:04:28 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/23 11:05:46 by mandriaf         ###   ########.fr       */
+/*   Created: 2025/06/23 10:59:15 by mandriaf          #+#    #+#             */
+/*   Updated: 2025/06/23 11:12:51 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	best_value_push_b(t_stack *a)
+static int	best_value_push_a(t_stack *b)
 {
 	int	cost;
 	int	current;
 	int	best;
 
-	current = absolute_value(a->cost_a) + absolute_value(a->cost_b);
-	best = a->data;
-	while (a)
+	current = absolute_value(b->cost_a) + absolute_value(b->cost_b);
+	best = b->data;
+	while (b)
 	{
-		cost = absolute_value(a->cost_a) + absolute_value(a->cost_b);
+		cost = absolute_value(b->cost_a) + absolute_value(b->cost_b);
 		if (cost < current)
 		{
-			best = a->data;
+			best = b->data;
 			current = cost;
 		}
-		a = a->next;
+		b = b->next;
 	}
 	return (best);
 }
 
-void	push_b_with_cost(t_stack **a, t_stack **b)
+void	push_a_with_cost(t_stack **a, t_stack **b)
 {
-	int		best_value;
-	int		target_in_b;
-	int		cost_a;
-	int		cost_b;
+	int	best_value;
+	int	target_in_a;
+	int	cost_a;
+	int	cost_b;
 	t_stack	*best;
 
-	best_value = best_value_push_b(*a);
-	best = find_node(*a, best_value);
-	target_in_b = choice_target_to_b(best, *b);
+	best_value = best_value_push_a(*b);
+	best = find_node(*b, best_value);
+	target_in_a = choice_target_to_a(*a, best);
 	cost_a = best->cost_a;
-	cost_b = get_cost(*b, target_in_b);
+	cost_b = get_cost(*a, target_in_a);
 	double_move(a, b, &cost_a, &cost_b);
 	move_a_and_b(a, b, &cost_a, &cost_b);
 }

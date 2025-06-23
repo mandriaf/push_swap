@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:59:14 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/23 10:55:08 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/23 11:07:22 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,9 @@ int					choice_target_to_a(t_stack *a, t_stack *b);
 int					choice_target_to_b(t_stack *a, t_stack *b);
 //---------calcule de cout----
 void				calculate_move_push_b(t_stack *a, t_stack *b);
+void				calculate_move_push_a(t_stack *a, t_stack *b);
 void				push_b_with_cost(t_stack **a, t_stack **b);
+void				push_a_with_cost(t_stack **a, t_stack **b);
 void				double_move(t_stack **a, t_stack **b, int *cost_a,
 						int *cost_b);
 void				move_a_and_b(t_stack **a, t_stack **b, int *cost_a,

@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 10:50:52 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/23 10:57:53 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/23 11:55:34 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,18 @@ void	calculate_move_push_b(t_stack *a, t_stack *b)
 	}
 }
 
-// void	calculate_move_push_a(t_stack *a, t_stack *b)
-// {
-// 	int	target;
-// 	t_stack	*tmp;
+void	calculate_move_push_a(t_stack *a, t_stack *b)
+{
+	int		target;
+	t_stack	*tmp;
 
-// 	tmp = b;
-// 	while (b)
-// 	{
-// 		target = choice_target_to_a(tmp, a);
-// 		tmp->cost_a = get_cost(b, tmp->data);
-// 		tmp->cost_b = get_cost(a, target);
-// 		tmp = tmp->next;
-// 	}
-// }
+	tmp = b;
+	while (tmp)
+	{
+		target = choice_target_to_a(a, tmp);
+		printf("target dans A : %d\n", target);
+		tmp->cost_a = get_cost(b, tmp->data);
+		tmp->cost_b = get_cost(a, target);
+		tmp = tmp->next;
+	}
+}

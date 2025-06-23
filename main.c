@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:49:22 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/22 17:30:19 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/23 11:58:35 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,16 @@ static int	check_args(int argc, char **argv)
 	return (0);
 }
 
+void	print(t_stack *stack)
+{
+	while (stack)
+	{
+		printf("%d -> ", stack->data);
+		stack = stack->next;
+	}
+	printf("NULL\n");
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
@@ -60,7 +70,23 @@ int	main(int argc, char **argv)
 		free_stack(&stack_a);
 		exit(1);
 	}
-	sort(&stack_a, &stack_b);
+	int *tab = create_tab(&stack_a);
+	sort_tab(tab, &stack_a);
+	assign_index(tab, &stack_a);
+	push_b(&stack_a, &stack_b);	
+	push_b(&stack_a, &stack_b);
+	push_b(&stack_a, &stack_b);
+	push_b(&stack_a, &stack_b);
+	print(stack_a);
+	print(stack_b);
+	calculate_move_push_a(stack_a, stack_b);
+	t_stack *tmp = stack_b;
+	while (tmp)
+	{
+		printf("Data : %d\tCout de A %d\tB %d\n", tmp->data, tmp->cost_a, tmp->cost_b);
+		tmp = tmp->next;
+	}
+	// sort(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

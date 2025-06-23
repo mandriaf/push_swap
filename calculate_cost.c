@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 16:04:28 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/22 19:58:26 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/23 10:12:11 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ static t_stack	*find_node(t_stack *stack, int target)
 	}
 	return (NULL);
 }
+
 void	double_move(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 {
 	while (*cost_a > 0 && *cost_b > 0)
@@ -116,13 +117,14 @@ void	move_a_and_b(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 		(*cost_b)++;
 	}
 }
-void push_b_with_cost(t_stack **a, t_stack **b)
+
+void	push_b_with_cost(t_stack **a, t_stack **b)
 {
-	int best_value;
-	int target_in_b;
-	int cost_a;
-	int cost_b;
-	t_stack *node;
+	int		best_value;
+	int		target_in_b;
+	int		cost_a;
+	int		cost_b;
+	t_stack	*node;
 
 	best_value = best_value_push_b(*a);
 	node = find_node(*a, best_value);

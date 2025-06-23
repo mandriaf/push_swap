@@ -6,14 +6,11 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 17:44:00 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/22 19:42:32 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/23 10:29:31 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-// void	double_move(t_stack **a, t_stack **b);
-void	push_b_with_cost(t_stack **a, t_stack **b);
 
 void	big_sort(t_stack **a, t_stack **b)
 {
@@ -31,7 +28,7 @@ void	big_sort(t_stack **a, t_stack **b)
 		calculate_move_top(*a, *b);
 		push_b_with_cost(a, b);
 		if (is_sorted(*a))
-			break;
+			break ;
 		push_b(a, b);
 	}
 	sort_three(a);

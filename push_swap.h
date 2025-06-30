@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:59:14 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/23 11:07:22 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:06:35 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ int					find_pos_target(t_stack **a, int target);
 void				target_a_to_top(t_stack **a, int target);
 void				target_b_to_top(t_stack **b, int target);
 void				big_sort(t_stack **a, t_stack **b);
-t_stack				*find_node(t_stack *stack, int target);
 int					choice_target_to_a(t_stack *a, t_stack *b);
 int					choice_target_to_b(t_stack *a, t_stack *b);
 //---------calcule de cout----

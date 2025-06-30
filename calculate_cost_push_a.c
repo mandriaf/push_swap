@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 10:59:15 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/30 11:02:48 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:25:38 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,29 @@ static t_stack	*best_value_push_a(t_stack *b)
 	int		current;
 	t_stack	*best;
 
-	current = absolute_value(b->cost_a) + absolute_value(b->cost_b);
+	if ((b->cost_a >= 0 && b->cost_b >= 0) || (b->cost_a < 0 && b->cost_b < 0))
+	{
+		if (b->cost_a > b->cost_b)
+			current = absolute_value(b->cost_a);
+		else
+			current = absolute_value(b->cost_b);
+	}
+	else
+		current = absolute_value(b->cost_a) + absolute_value(b->cost_b);
 	best = b;
 	b = b->next;
 	while (b)
 	{
-		cost = absolute_value(b->cost_a) + absolute_value(b->cost_b);
+		if ((b->cost_a >= 0 && b->cost_b >= 0) || (b->cost_a < 0
+				&& b->cost_b < 0))
+		{
+			if (b->cost_a > b->cost_b)
+				cost = absolute_value(b->cost_a);
+			else
+				cost = absolute_value(b->cost_b);
+		}
+		else
+			cost = absolute_value(b->cost_a) + absolute_value(b->cost_b);
 		if (cost < current)
 		{
 			best = b;

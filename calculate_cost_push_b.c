@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 16:04:28 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/30 11:47:52 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/07/18 11:54:43 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ static t_stack	*best_value_push_b(t_stack *a)
 	int		current;
 	t_stack	*best;
 
-	current = absolute_value(a->cost_a) + absolute_value(a->cost_b);
+	current = choice_best_cost(a->cost_a, a->cost_b);
 	best = a;
 	a = a->next;
 	while (a)
 	{
-		cost = absolute_value(a->cost_a) + absolute_value(a->cost_b);
+		cost = choice_best_cost(a->cost_a, a->cost_b);
 		if (cost < current)
 		{
 			best = a;

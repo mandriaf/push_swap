@@ -6,18 +6,11 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 10:50:52 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/23 17:40:41 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/07/18 11:49:23 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	absolute_value(int value)
-{
-	if (value < 0)
-		return (-value);
-	return (value);
-}
 
 int	get_cost(t_stack *stack, int target)
 {

@@ -6,20 +6,20 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 11:40:35 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/07/18 11:54:56 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/07/21 14:58:02 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	absolute_value(int value)
+static int	absolute_value(int value)
 {
 	if (value < 0)
 		return (-value);
 	return (value);
 }
 
-int	ft_max(int a, int b)
+static int	ft_max(int a, int b)
 {
 	if (a > b)
 		return (a);

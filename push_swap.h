@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:59:14 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/07/18 11:47:11 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/07/21 14:58:15 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,8 @@ void				double_move(t_stack **a, t_stack **b, int *cost_a,
 void				move_a_and_b(t_stack **a, t_stack **b, int *cost_a,
 						int *cost_b);
 //-----Calculate cost utils
-int					absolute_value(int value);
+//int					absolute_value(int value);
 int					get_cost(t_stack *stack, int target);
-int					ft_max(int a, int b);
+//int					ft_max(int a, int b);
 int					choice_best_cost(int cost_a, int cost_b);
 #endif

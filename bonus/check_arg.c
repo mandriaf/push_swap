@@ -6,38 +6,11 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 13:08:50 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/07/13 10:51:34 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/07/24 20:13:34 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-static int	ft_is_digit(int c)
-{
-	if (c < '0' && c > '9')
-		return (0);
-	return (1);
-}
-
-void	check_argument(char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if ((s[i] == '+' || s[i] == '-')
-			&& (s[i + 1] != '+' || s[i + 1] != '-'))
-			i++;
-		if (ft_is_digit(s[i]) == 0)
-		{
-			write(2, "Error\n", 6);
-			free(s);
-			exit(1);
-		}
-		i++;
-	}
-}
+#include "push_swap_bonus.h"
 
 int	check_double(t_stack **a)
 {

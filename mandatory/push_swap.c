@@ -6,11 +6,17 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:49:22 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/07/13 10:51:05 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/07/24 20:15:29 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	print_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}
 
 static int	only_space(const char *s)
 {
@@ -47,18 +53,14 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc < 2)
-		return (0);
+		print_error();
 	if (!check_args(argc, argv))
-	{
-		write(2, "Error\n", 6);
-		exit(1);
-	}
+		print_error();
 	stack_a = init_stack(argc, argv);
 	if (check_double(&stack_a))
 	{
-		write(2, "Error\n", 6);
 		free_stack(&stack_a);
-		exit(1);
+		print_error();
 	}
 	sort(&stack_a, &stack_b);
 	free_stack(&stack_a);

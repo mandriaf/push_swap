@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 13:49:22 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/07/24 21:39:15 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:53:11 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ int	main(int argc, char **argv)
 		printf("%d->", tmp->data);
 		tmp = tmp->next;
 	}
+	printf("NULL\n");
 	t_stack	*tmp2 = stack_b;
 	tmp2 = stack_b;
 	while (tmp2)
@@ -111,8 +112,14 @@ int	main(int argc, char **argv)
 		printf("%d->", tmp2->data);
 		tmp2 = tmp2->next;
 	}
-	if (is_sorted(stack_a))
-		write (1, "OK\n", 3);
+	printf("NULL\n");
+	if (stack_size(&stack_b) == 0)
+	{
+		if (is_sorted(stack_a))
+			write (1, "OK\n", 3);
+		else
+			write (1, "KO\n", 3);
+	}
 	else
 		write (1, "KO\n", 3);
 	free_stack(&stack_a);

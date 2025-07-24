@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 18:40:48 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/07/24 21:06:28 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/07/24 21:51:43 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,6 @@ void				rotate_a(t_stack **stack_a);
 void				rotate_b(t_stack **stack_b);
 void				rotate_a_and_b(t_stack **stack_a, t_stack **stack_b);
 int					ft_strcmp(char *s1, char *s2);
+int					stack_size(t_stack **stack);
+
 #endif

@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   print_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 21:01:36 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/07/25 12:17:56 by mandriaf         ###   ########.fr       */
+/*   Created: 2025/07/25 09:48:23 by mandriaf          #+#    #+#             */
+/*   Updated: 2025/07/25 12:40:14 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-int	ft_strcmp(char *s1, char *s2)
+void	print_error(void)
 {
-	int	i;
-
-	if (!s1 || !s2)
-		return (-1);
-	i = 0;
-	while (s1[i] || s2[i])
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
-	}
-	return (0);
+	write(2, "Error\n", 6);
+	exit(1);
 }

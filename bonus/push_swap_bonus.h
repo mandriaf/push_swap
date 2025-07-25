@@ -6,7 +6,7 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 18:40:48 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/07/24 21:51:43 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/07/25 12:50:03 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
+void				print_error(void);
 int					check_double(t_stack **a);
 void				free_stack(t_stack **head);
 long				ft_atoi(const char *nptr);
@@ -31,7 +32,6 @@ char				*ft_strjoin(const char *s1, const char *s2);
 int					ft_strlen(const char *s);
 char				*get_next_line(int fd);
 t_stack				*init_stack(int argc, char **argv);
-int					is_sorted(t_stack *a);
 void				lstadd_back(t_stack **lst, t_stack *new);
 t_stack				*new_stack(int data);
 void				swap_a(t_stack **stack_a);
@@ -48,5 +48,6 @@ void				rotate_b(t_stack **stack_b);
 void				rotate_a_and_b(t_stack **stack_a, t_stack **stack_b);
 int					ft_strcmp(char *s1, char *s2);
 int					stack_size(t_stack **stack);
-
+void				do_operation(t_stack **a, t_stack **b);
+void				check_sorted(t_stack **a, t_stack **b);
 #endif

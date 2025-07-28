@@ -6,7 +6,10 @@ SRC = ./mandatory/push_swap.c ./mandatory/big_sort.c ./mandatory/calculate_cost_
 		./mandatory/rotate.c ./mandatory/sort_five.c ./mandatory/sort_three.c ./mandatory/sort.c ./mandatory/stack_size.c \
 		./mandatory/swap.c ./mandatory/util_sort.c
 
-BONUS = $(wildcard ./bonus/*.c ./bonus/get_next_line/*.c)
+BONUS = ./bonus/check_arg.c ./bonus/checker.c ./bonus/free_stack.c ./bonus/ft_atoi.c ./bonus/ft_split.c ./bonus/ft_strcmp.c ./bonus/ft_strdup.c \
+		./bonus/ft_strjoin.c ./bonus/ft_strlen.c ./bonus/init_stack.c ./bonus/instructions.c ./bonus/is_sorted.c ./bonus/lstadd_back.c ./bonus/new_stack.c \
+		./bonus/print_error.c ./bonus/push.c ./bonus/reverse_rotate.c ./bonus/rotate.c ./bonus/stack_size.c ./bonus/swap.c ./bonus/get_next_line/get_next_line.c \
+		./bonus/get_next_line/get_next_line_utils.c
 
 NAME = push_swap
 

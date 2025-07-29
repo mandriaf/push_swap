@@ -6,30 +6,11 @@
 /*   By: mandriaf <mandriaf@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 20:33:35 by mandriaf          #+#    #+#             */
-/*   Updated: 2025/06/30 11:06:01 by mandriaf         ###   ########.fr       */
+/*   Updated: 2025/07/29 19:32:29 by mandriaf         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	target_b_to_top(t_stack **b, int target)
-{
-	int	pos;
-	int	size;
-
-	size = stack_size(b);
-	pos = find_pos_target(b, target);
-	if (pos <= size / 2)
-	{
-		while (pos-- > 0)
-			rotate_b(b);
-	}
-	else
-	{
-		while (pos++ < size)
-			reverse_rotate_b(b);
-	}
-}
 
 void	target_a_to_top(t_stack **a, int target)
 {
